@@ -40,7 +40,7 @@ this function represents a weird sequence where n is added to the previous resul
 After understanding the way it works I searched up the sequence and found it is the the Triangular Number Sequence.
 > formula: n(n+1)/2
 
-I believe this is also the Big O Notation as well. O(n(n+1)/2) which makes it less steps than the first example is less complex. 
+I believe this is also the Big O Notation as well. O(n(n+1)/2) which makes it less steps than the first example aka less complex. 
 
 ## Asymptotic Analysis
 I will be doing the Asymptotic Analysis using go-echarts
