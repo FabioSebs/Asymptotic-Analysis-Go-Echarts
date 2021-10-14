@@ -22,7 +22,7 @@ func getX(algo func(int) []int, n int) []int {
 	points := []int{}
 
 	for i := range algo(n) {
-		points = append(points, i)
+		points = append(points, i+1)
 	}
 	return points
 }
@@ -35,8 +35,8 @@ func example1(n int) []int {
 	for i := 1; i <= n; i++ {
 		for j := 1; j <= n; j++ {
 			sum += 1
-			sumArray = append(sumArray, sum)
 		}
+		sumArray = append(sumArray, sum)
 	}
 	return sumArray
 }
@@ -49,8 +49,8 @@ func example2(n int) []int {
 	for i := 1; i <= n; i++ {
 		for j := 1; j <= i; j++ {
 			sum += 1
-			sumArray = append(sumArray, sum)
 		}
+		sumArray = append(sumArray, sum)
 	}
 
 	return sumArray
@@ -60,35 +60,21 @@ func example2(n int) []int {
 func httpserver(w http.ResponseWriter, _ *http.Request) {
 	//Create a new line instance
 	line := charts.NewLine()
-	line2 := charts.NewLine()
 
 	//Set some global option
 	line.SetGlobalOptions(
-		charts.WithInitializationOpts(opts.Initialization{Theme: types.ThemeWesteros}),
+		charts.WithInitializationOpts(opts.Initialization{Theme: types.ThemeChalk}),
 		charts.WithTitleOpts(opts.Title{
 			Title:    "Asymptotic Analysis of Algorithm",
 			Subtitle: "Example 1",
 		}))
 
-	line2.SetGlobalOptions(
-		charts.WithInitializationOpts(opts.Initialization{Theme: types.ThemeWesteros}),
-		charts.WithTitleOpts(opts.Title{
-			Title:    "Asymptotic Analysis of Algorithm",
-			Subtitle: "Example 2",
-		}))
-
-	line.SetXAxis(getX(example1, 10)).
-		AddSeries("Example 1", generateLineItems(example1, 10)).
-		AddSeries("Example 2", generateLineItems(example2, 10)).
-		SetSeriesOptions(charts.WithLineChartOpts(opts.LineChart{Smooth: true}))
-
-	line2.SetXAxis(getX(example2, 10)).
-		AddSeries("Example 1", generateLineItems(example1, 10)).
-		AddSeries("Example 2", generateLineItems(example2, 10)).
+	line.SetXAxis(getX(example1, 20)).
+		AddSeries("Example 1", generateLineItems(example1, 20)).
+		AddSeries("Example 2", generateLineItems(example2, 20)).
 		SetSeriesOptions(charts.WithLineChartOpts(opts.LineChart{Smooth: true}))
 
 	line.Render(w)
-	line2.Render(w)
 }
 
 func main() {
