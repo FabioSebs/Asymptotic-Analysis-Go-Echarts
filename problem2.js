@@ -32,7 +32,7 @@ let scan = (items, start, end) => {
 		}
 	}
 
-	return s // if s isnt less than or equal to e then we will return s as the index that needs to be used as a 
+	return s // if s isnt less than or equal to e then we will return s as the index that needs to be used as a start or end 
 }
 
 let quickSort = (items, start, end) => {
