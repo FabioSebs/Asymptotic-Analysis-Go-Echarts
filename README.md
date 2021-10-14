@@ -202,4 +202,4 @@ console.log(sortedArray)
 
 ```
 
-I decided to implement the Quicksort Algorithm on JavaScript and commented the program for people to follow along. The algorithm is a little tricky and uses a pivot element and two iterating indexes, as well as divides the array into multiple subarrays to sort the whole array with recursion. With a bad pivot element and bad implementation this algorithms complexity can be *O(n^2)*/Exponentuak and at best case it can be *O(logn)*/Logarithmic.  
+I decided to implement the Quicksort Algorithm on JavaScript and commented the program for people to follow along. The algorithm is a little tricky and uses a pivot element and two iterating indexes, as well as divides the array into multiple subarrays to sort the whole array with recursion. With a bad pivot element and bad implementation this algorithms complexity can be *O(n^2)*/Exponential and at best case it can be *O(logn)*/Logarithmic.  
